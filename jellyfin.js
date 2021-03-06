@@ -4,7 +4,7 @@ let newRequest = new URL(request.url)
 let cacheRequest = newRequest.pathname
 
 const media = new Map ([
-    ['video', /^.*\.(m4s|mp4|ts|avi|mpeg|mpg|mkv|bin|webm|vob|flv|m2ts|mts|3gp|m4v|wmv)/],
+    ['video', /^.*\.(m4s|mp4|ts|avi|mpeg|mpg|mkv|bin|webm|vob|flv|m2ts|mts|3gp|m4v|wmv|qt)/],
     ['image', /^.*\.(jpeg|jpg|png|dng|tiff|webp|gif)/],
     ['frontEnd', /^.*\.(css|js)/],
     ['audio', /^.*\.(flac|aac|mp3|alac|aiff|wav|ogg|aiff|opus|ape|wma|3gp)/],
