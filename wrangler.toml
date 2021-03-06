@@ -1,6 +1,6 @@
 name = "jellyfin-worker"
 type = "javascript"
-account_id = "CF_ACCOUNT_ID"
+account_id = "25f21f141824546aa72c74451a11b419"
 workers_dev = false
 route = "*jellyfin.erfianugrah.com/*"
-zone_id = "CF_ZONE_ID"
+zone_id = "3f2c4daa43d5920f313654a873b31d06"
