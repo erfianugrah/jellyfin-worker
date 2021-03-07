@@ -8,7 +8,7 @@ const media = new Map ([
     ['image', /^.*\.(jpeg|jpg|png|dng|tiff|webp|gif)/],
     ['frontEnd', /^.*\.(css|js)/],
     ['audio', /^.*\.(flac|aac|mp3|alac|aiff|wav|ogg|aiff|opus|ape|wma|3gp)/],
-    ['directPlay', /^.*(\/Download|\/Audio|\/Video)/],
+    ['directPlay', /^.*(\/Download|\/Audio|\/Video|\/Images)/],
     ['manifest', /^.*\.(m3u8|mpd)/]
 ])
 
