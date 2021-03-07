@@ -1,6 +1,12 @@
 name = "jellyfin-worker"
 type = "javascript"
-account_id = "25f21f141824546aa72c74451a11b419"
-workers_dev = false
+
+[env.staging]
+name = "staging-jellyfin"
+vars = { ENVIRONMENT = "staging" }
+workers_dev = true
+
+[env.prod]
+name = "prod-jellyfin"
+vars = { ENVIRONMENT = "production" }
 route = "*jellyfin.erfianugrah.com/*"
-zone_id = "3f2c4daa43d5920f313654a873b31d06"
