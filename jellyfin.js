@@ -18,9 +18,9 @@ const media = new Map ([
     if (cacheRequest.match(media.get('image')))
         return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
         })
-    if (newRequest.match(media.get('frontEnd')))
-        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 3600, '400-499': 1, '500-599': 0 }},
-        })
+//   if (cacheRequest.match(media.get('frontEnd')))
+//        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 3600, '400-499': 1, '500-599': 0 }},
+//        })
     if (cacheRequest.match(media.get('audio')))
         return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
         })
