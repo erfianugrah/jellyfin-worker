@@ -1,7 +1,7 @@
 async function handleRequest(request) {
 
-let newRequest = new URL(request.url)
-let cacheRequest = newRequest.pathname
+const newRequest = new URL(request.url)
+const cacheRequest = newRequest.pathname
 
 const media = new Map ([
     ['video', /^.*\.(m4s|mp4|ts|avi|mpeg|mpg|mkv|bin|webm|vob|flv|m2ts|mts|3gp|m4v|wmv|qt)/],
@@ -13,22 +13,28 @@ const media = new Map ([
 ])
 
     if (cacheRequest.match(media.get('video')))
-        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
+        return await fetch(newRequest, 
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
         })
     if (cacheRequest.match(media.get('image')))
-        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
+        return await fetch(newRequest, 
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
         })
     if (cacheRequest.match(media.get('frontEnd')))
-        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 3600, '400-499': 1, '500-599': 0 }},        
+        return await fetch(newRequest, 
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 3600, '400-499': 1, '500-599': 0 }},        
         })
     if (cacheRequest.match(media.get('audio')))
-        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
+        return await fetch(newRequest, 
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
         })
     if (cacheRequest.match(media.get('directPlay')))
-        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
+        return await fetch(newRequest, 
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},
         })
     if (cacheRequest.match(media.get('manifest')))
-        return await fetch(newRequest, { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 1, '400-499': 1, '500-599': 0 }},
+        return await fetch(newRequest, 
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 1, '400-499': 1, '500-599': 0 }},
         })
     return fetch(request)
 }
