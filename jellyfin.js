@@ -22,7 +22,7 @@ const media = new Map ([
         })
     if (cacheRequest.match(media.get('frontEnd')))
         return await fetch(request, 
-            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 3600, '400-499': 1, '500-599': 0 }},        
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '400-499': 1, '500-599': 0 }},        
         })
     if (cacheRequest.match(media.get('audio')))
         return await fetch(request, 
@@ -34,7 +34,7 @@ const media = new Map ([
         })
     if (cacheRequest.match(media.get('manifest')))
         return await fetch(request, 
-            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 1, '400-499': 1, '500-599': 0 }},
+            { cf: {cacheEverything: true, cacheTtlByStatus: { '200-299': 2, '400-499': 1, '500-599': 0 }},
         })
     return await fetch(request)
 }
