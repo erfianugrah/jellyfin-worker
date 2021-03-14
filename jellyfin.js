@@ -54,4 +54,3 @@ if (newRequest.pathname.match(directPlay)) {
 return fetch(request)
 
 }
-
