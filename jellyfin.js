@@ -16,19 +16,8 @@ const cacheAssets = [
     {asset: 'manifest', key: customCacheKey, regex: /^.*\.(m3u8|mpd)/, info: -1, ok: 3, redirects: 30, clientError: 10, serverError: 0 }
 ]
 
-/*
-const video = /^.*\.(m4s|mp4|ts|avi|mpeg|mpg|mkv|bin|webm|vob|flv|m2ts|mts|3gp|m4v|wmv|qt)/
-const image = /^.*\.(jpeg|jpg|png|dng|tiff|webp|gif)/
-const frontEnd = /^.*\.(css|js)/
-const audio = /^.*\.(flac|aac|mp3|alac|aiff|wav|ogg|aiff|opus|ape|wma|3gp)/
-const directPlay = /^.*(\/Download|\/Audio)/
-const manifest = /^.*\.(m3u8|mpd)/
-*/
-
 const cacheAssets_match = cacheAssets.find( ({regex}) => newRequest.pathname.toLowerCase().match(regex))
 const cache = cacheAssets_match ? cacheAssets_match : ''
-console.log(cacheAssets_match)
-//console.log(cache)
 
 return await fetch(request, 
         { cf: 
@@ -44,45 +33,4 @@ return await fetch(request,
             },
         
         })
-
-
-/*
-if (newRequest.pathname.match(video)) {
-    return await fetch(request, 
-        { cf: { cacheEverything: true, cacheTtlByStatus: { '200-399': 10, '300-399': 10, '400-499': 1, '500-599': 0 },},
-    }) 
-} else
-
-if (newRequest.pathname.match(manifest)) {
-    return await fetch(request, 
-        { cf: {cacheKey: customCacheKey, cacheEverything: true, cacheTtlByStatus: { '200-299': 3, '300-399': 2, '400-499': 1, '500-599': 0 },},
-    })
-} else
-
-if (newRequest.pathname.match(image)) {
-    return await fetch(request, 
-        { cf: {cacheKey: customCacheKey, cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '300-399': 5, '400-499': 1, '500-599': 0 },},
-    })
-} else
-
-if (newRequest.pathname.match(frontEnd)) {
-    return await fetch(request, 
-        { cf: {cacheKey: customCacheKey, cacheEverything: true, cacheTtlByStatus: { '200-299': 3600, '300-399': 5, '400-499': 1, '500-599': 0 },},
-    })
-} else
-
-if (newRequest.pathname.match(audio)) {
-    return await fetch(request, 
-        { cf: {cacheKey: customCacheKey, cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '300-399': 5, '400-499': 1, '500-599': 0 },},
-    })
-} else
-
-if (newRequest.pathname.match(directPlay)) {
-    return await fetch(request, 
-        { cf: {cacheKey: customCacheKey, cacheEverything: true, cacheTtlByStatus: { '200-299': 86400, '300-399': 5, '400-499': 1, '500-599': 0 },},
-    })
-} else
-
-*/
-//return fetch(request)
 }
