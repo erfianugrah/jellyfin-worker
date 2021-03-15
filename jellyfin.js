@@ -25,6 +25,7 @@ return await fetch(request,
                 cacheKey: cache.key, 
                 cacheEverything: true, 
                 cacheTtlByStatus: { 
+                    '100-199': cache.info
                     '200-299': cache.ok, 
                     '300-399': cache.redirects, 
                     '400-499': cache.clientError, 
