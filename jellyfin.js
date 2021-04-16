@@ -20,17 +20,17 @@ const cacheAssets = [
 const cacheAssets_match = cacheAssets.find( ({regex}) => newRequest.pathname.toLowerCase().match(regex))
 const cache = cacheAssets_match ? cacheAssets_match : ''
 
-return await fetch(request, 
-        { cf: 
-            { 
-                cacheKey: cache.key, 
-                cacheEverything: true, 
-                cacheTtlByStatus: { 
+return await fetch(request,
+        { cf:
+            {
+                cacheKey: cache.key,
+                cacheEverything: true,
+                cacheTtlByStatus: {
                     '100-199': cache.info,
-                    '200-299': cache.ok, 
-                    '300-399': cache.redirects, 
-                    '400-499': cache.clientError, 
-                    '500-599': cache.serverError 
+                    '200-299': cache.ok,
+                    '300-399': cache.redirects,
+                    '400-499': cache.clientError,
+                    '500-599': cache.serverError
                     },
             },
         
