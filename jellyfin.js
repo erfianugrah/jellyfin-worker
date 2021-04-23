@@ -18,7 +18,7 @@ const cacheAssets = [
 ]
 
 const cacheAssets_match = cacheAssets.find( ({regex}) => newRequest.pathname.toLowerCase().match(regex))
-const cache = cacheAssets_match ? cacheAssets_match : ''
+const cache = cacheAssets_match ? cacheAssets_match : {}
 
 return await fetch(request,
         { cf:
