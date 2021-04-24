@@ -21,7 +21,7 @@ const cacheAssets = {
 //const cacheAssets_match = cacheAssets.find( ({regex}) => newRequest.pathname.toLowerCase().match(regex))
 const cache = cacheAssets ? cacheAssets : {}
 
-return await fetch(request,
+const newResponse = await fetch(request,
         { cf:
             {
                 cacheKey: cache.key,
@@ -36,4 +36,8 @@ return await fetch(request,
             },
         
         })
+
+const response = new Response(newResponse.body, newResponse)
+response.headers.set('debug', JSON.stringify(cache))
+return response
 }
