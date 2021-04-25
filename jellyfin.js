@@ -18,7 +18,7 @@ const cacheAssets = [
     {asset: 'manifest', key: customCacheKey, regex: /^.*\.(m3u8|mpd)/, info: 0, ok: 3, redirects: 2, clientError: 1, serverError: 0 }
 ]
 
-const cacheAssets_match = cacheAssets.find( ({regex}) => newRequest.pathname.toLowerCase().match(regex))
+const cacheAssets_match = cacheAssets.find( ({regex}) => newRequest.pathname.match(regex))
 const cache = cacheAssets_match ? cacheAssets_match : {}
 
 const newResponse = await fetch(request,
