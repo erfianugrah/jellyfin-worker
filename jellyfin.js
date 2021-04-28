@@ -22,7 +22,7 @@ const { asset, regex, ...cache } = cacheAssets.find( ({regex}) => newRequest.pat
 const newResponse = await fetch(request,
         { cf:
             {
-            //  cacheKey: cache.key,
+                cacheKey: cache.key,
                 cacheEverything: true,
                 cacheTtlByStatus: {
                     '100-199': cache.info,
