@@ -5,8 +5,8 @@ addEventListener('fetch', event => {
 async function handleRequest(request) {
 
 const newRequest = new URL(request.url)
-const customCacheKey = newRequest.hostname + newRequest.pathname
-const queryCacheKey = newRequest.hostname + newRequest.pathname + newRequest.search
+const customCacheKey = `${newRequest.hostname}${newRequest.pathname}`
+const queryCacheKey = `${newRequest.hostname}${newRequest.pathname}${newRequest.search}`
 
 const cacheAssets = [
     {asset: 'video', key: customCacheKey, regex: /(.*\/Video)|(.*\.(m4s|mp4|ts|avi|mpeg|mpg|mkv|bin|webm|vob|flv|m2ts|mts|3gp|m4v|wmv|qt))/, info: 0, ok: 31556952, redirects: 30, clientError: 10, serverError: 0 },
