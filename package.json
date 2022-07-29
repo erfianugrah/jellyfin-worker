@@ -1,5 +1,5 @@
 {
-    "name": "{{ project-name }}",
+    "name": "jellyfin",
     "version": "1.0.0",
     "description": "jellyfin caching",
     "main": "jellyfin.js",
