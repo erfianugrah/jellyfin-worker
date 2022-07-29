@@ -3,6 +3,6 @@
     "version": "1.0.0",
     "description": "jellyfin caching",
     "main": "jellyfin.js",
-    "author": "{{ authors }}",
+    "author": "Erfi Anugrah",
     "license": "ISC"
 }

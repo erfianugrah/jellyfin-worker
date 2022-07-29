@@ -22,6 +22,7 @@ const { asset, regex, ...cache } = cacheAssets.find( ({regex}) => newRequest.pat
 const newResponse = await fetch(request,
         { cf:
             {
+                mirage: false,
                 cacheKey: cache.key,
                 cacheEverything: true,
                 cacheTtlByStatus: {
@@ -37,5 +38,7 @@ const newResponse = await fetch(request,
 
 const response = new Response(newResponse.body, newResponse)
 response.headers.set('debug', JSON.stringify(cache))
-return response
+
+const catchResponseError = response.ok || response.redirected ? response : await fetch(request)
+return catchResponseError
 }
