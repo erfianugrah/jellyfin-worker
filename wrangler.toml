@@ -1,6 +1,6 @@
 name = "jellyfin-worker"
 main = "./jellyfin.js"
-compatibility_date = "2021-09-21"
+compatibility_date = "2022-10-09"
 account_id = "25f21f141824546aa72c74451a11b419"
 
 [dev]
