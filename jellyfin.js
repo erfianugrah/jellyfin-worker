@@ -30,6 +30,9 @@ const newResponse = await fetch(request,
                     '400-499': cache.clientError,
                     '500-599': cache.serverError
                     },
+                cacheTags:[
+                    "video"
+                ]
             },
         
         })
