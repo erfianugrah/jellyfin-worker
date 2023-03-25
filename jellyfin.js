@@ -14,8 +14,8 @@ const cacheAssets = [
     {asset: 'transcode', key: customCacheKey, regex: /(.*\.(m4s|ts|webm|m2ts|mts))/, info: 0, ok: 31556952, redirects: 30, clientError: 10, serverError: 0 },
     {asset: 'direct', key: rangeCacheKey, regex: /(.*\.(avi|mpeg|mpg|mkv|bin|webm|vob|flv|3gp|m4v|wmv|qt))/, info: 0, ok: 31556952, redirects: 30, clientError: 10, serverError: 0 },
     {asset: 'image', key: queryCacheKey, regex: /(.*\.(jpg|jpeg|png|bmp|pict|tif|tiff|webp|gif|heif|exif|bat|bpg|ppm|pgn|pbm|pnm))/, info: 0, ok: 3600, redirects: 30, clientError: 10, serverError: 0 },
-    {asset: 'audio', key: customCacheKey, regex: /(.*\.(flac|aac|mp3|alac|aiff|wav|ogg|aiff|opus|ape|wma|3gp))/, info: 0, ok: 31556952, redirects: 30, clientError: 10, serverError: 0 },
-    {asset: 'manifest', key: customCacheKey, regex: /^.*\.(m3u8|mpd)/, info: 0, ok: 1, redirects: 2, clientError: 1, serverError: 0 }
+    {asset: 'audio', key: customCacheKey, regex: /(.*\.(flac|aac|mp3|alac|aiff|wav|ogg|aiff|opus|ape|wma|3gp))/, info: 0, ok: 31556952, redirects: 30, clientError: 10, serverError: 0 }
+    // {asset: 'manifest', key: customCacheKey, regex: /^.*\.(m3u8|mpd)/, info: 0, ok: 1, redirects: 2, clientError: 1, serverError: 0 }
 ]
 
 const { asset, regex, ...cache } = cacheAssets.find( ({regex}) => newRequest.pathname.match(regex)) ?? {}
